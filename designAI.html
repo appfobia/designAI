@@ -1,11 +1,171 @@
 <head>
-  <title>designAI</title>
+  <title>Using AI to analyse and suggest better designs</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>AI for Design</h1>
+  <div class="about-section ">
+    <h2>AI to suggest better web page designs automatically</h2>
+    <p>
+      We tried to find why some web pages look good and why some web pages aren't.
+    </p>
+    <p>
+      We made design models and worked out to find parameters on which design of a web page depends.
+    </p>
+      <p>
+        We trained our design model with web pages that looks good and also with web pages that do not look good.
+        This is done by first ranking a set of websites by polls and then taking the average ranks.
+      </p>
+      <p>
+      After we trained our models , we tried to rank a random webpage according to the above design model.
+    </p>
+  </div>
+  <div class="training-section">
+    <h2>Training the design model  </h2>
+    <form class="train-url-submission">
+      <input type="text" name="title" placeholder="Enter web page url to train the model">
+      <input class="submit btn" type="submit" name="Submit">
+    </form>
+    <h3>Page design analysis</h3>
+    <table>
+      <tr>
+          <th>
+            Web page
+          </th>
+          <th>
+            Spacing ratio
+          </th>
+          <th>
+            Area ratio
+          </th>
+          <th>
+            Pattern usage
+          </th>
+          <th>
+            Closeness ratio
+          </th>
+      </tr>
+      <tr>
+          <td>
+            producthunt.com
+          </td>
+          <td>
+            0.6
+          </td>
+          <td>
+            0.3:0.5:0.6
+          </td>
+          <td>
+            8/10
+          </td>
+          <td>
+            0.8
+          </td>
+      </tr>
+    </table>
+  </div>
 
-  {{> hello}}
+  <div class="poll-section">
+    <h2>Poll to rank standard web pagespages</h2>
+    <table>
+      <tr>
+          <th>
+            Web page
+          </th>
+          <th>
+            Overall rank
+          </th>
+
+      </tr>
+      <tr>
+        <td>
+        <form class="new-webpage-poll">
+        <input type="text" name="title" placeholder="webpage url">
+      </form>
+        </td>
+        <td>
+            <input class="new-rank-poll" type="text" name="title" placeholder="page rank">
+        </td>
+        <td>
+          <button class="submit btn">Add</button>
+        </td>
+      </tr>
+      <tr>
+          <td>
+            producthunt.com
+          </td>
+          <td>
+            <form class="rank">
+              <input type="text" name="title" placeholder="Enter rank">
+            </form>
+          </td>
+
+      </tr>
+    </table>
+    <button class="submit btn final">Submit</button>
+  </div>
+
+  <div class="test-section">
+    <h2>Test the design model by submitting a webpage and get good design suggestion  </h2>
+    <form class="test-url">
+      <input type="text" name="title" placeholder="Your page url">
+      <input class="submit btn" type="submit" name="Submit">
+    </form>
+    <h3>Page design analysis</h3>
+    <table>
+      <tr>
+          <th>
+            Web page
+          </th>
+          <th>
+            Spacing ratio
+          </th>
+          <th>
+            Area ratio
+          </th>
+          <th>
+            Pattern usage
+          </th>
+          <th>
+            Closeness ratio
+          </th>
+          <th>
+            Overall rank
+          </th>
+      </tr>
+      <tr>
+          <td>
+            producthunt.com
+          </td>
+          <td>
+            0.6
+          </td>
+          <td>
+            0.3:0.5:0.6
+          </td>
+          <td>
+            8/10
+          </td>
+          <td>
+            0.8
+          </td>
+          <td>
+            4
+          </td>
+      </tr>
+    </table>
+    <h3>Design suggestions (if any) :</h3>
+    <div class="test-results-text">
+    <p>
+      Example test result .
+    </p>
+    </div>
+    <h3>See your webpage after autimatic beautification :</h3>
+    <div class="test-results-url">
+    <a href="#">output-test-url</a>
+    </div>
+  </div>
+
 </body>
 
 <template name="hello">
